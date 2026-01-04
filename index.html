@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>Untitled</title>
+    <link rel="stylesheet" href="./style.css">
+
+  </head>
+    
+  <body>
+  <div class="topbar">
+  <div class="inner">
+    <div class="brand">
+      <div class="logo">SG</div>
+      <div>
+        <div style="font-weight:900">SlideGenius</div>
+        <div id="brandSub" style="font-size:12px;color:var(--muted)">منصّة عروض</div>
+      </div>
+    </div>
+
+    <div class="nav">
+      <button class="link" id="navHome">الرئيسية</button>
+      <button class="link" id="navTemplates">القوالب</button>
+      <button class="link" id="navEditor">المحرر</button>
+      <button class="link" id="navPricing">الأسعار</button>
+      <button class="link" id="navAdmin">الأدمن</button>
+      <button class="btn2" id="toggleLang">EN</button>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <section id="page-home" class="section">
+    <div class="badge">✨ <span id="pill">نسخة V2 — ملف واحد كامل</span></div>
+    <div class="h1" id="heroTitle">حوّل أفكارك لعرض احترافي خلال ثواني</div>
+    <div class="p" id="heroSub">قوالب بالصور + خطوط عربية + رفع صور المستخدم + PayPal.</div>
+
+    <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:14px">
+      <button class="btn" id="btnGoEditor">ابدأ الآن</button>
+      <button class="btn2" id="btnGoTemplates">استعرض القوالب</button>
+      <button class="btn2" id="btnGoAdmin">دخول الأدمن</button>
+    </div>
+
+    <div class="grid grid3" style="margin-top:18px">
+      <div class="card">
+        <div style="font-weight:900" id="h1">قوالب بالصور</div>
+        <div class="p" id="h1s">ارفعي تصميمك كصورة وحددي أماكن النص والصورة بالسحب.</div>
+      </div>
+      <div class="card">
+        <div style="font-weight:900" id="h2">خطوط عربية</div>
+        <div class="p" id="h2s">رقعة/نسخ/كوفي/أميري… + بدائل للديواني.</div>
+      </div>
+      <div class="card">
+        <div style="font-weight:900" id="h3">PayPal</div>
+        <div class="p" id="h3s">ادخلي Client ID فقط — واختبري في Full Page.</div>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top:14px">
+      <div style="font-weight:900;margin-bottom:6px" id="quickTitle">مهم جدًا</div>
+      <div class="mini" id="quickNote">
+        1) افتحي المشروع من CodePen → Full Page عشان PayPal يكمل. <br>
+        2) في Sandbox لازم حساب Buyer تجريبي من PayPal Developer. <br>
+        3) لا تحطين أي Secret داخل هذا الملف.
+      </div>
+    </div>
+  </section>
+
+  <section id="page-templates" class="section hidden">
+    <div class="rowBetween">
+      <div>
+        <div class="h1" style="font-size:28px" id="tplTitle">القوالب</div>
+        <div class="p" id="tplSub">اختاري قالب وابدئي تعديل المحتوى.</div>
+      </div>
+      <button class="btn2" id="btnBackHomeFromTemplates">رجوع</button>
+    </div>
+    <div id="templatesGrid" class="grid grid3" style="margin-top:14px"></div>
+  </section>
+
+  <section id="page-editor" class="section hidden">
+    <div class="rowBetween">
+      <div>
+        <div class="h1" style="font-size:28px" id="edTitle">المحرر</div>
+        <div class="p" id="edSub">اختاري قالب + اكتبي العنوان والنص + ارفعي صورتك.</div>
+      </div>
+      <button class="btn2" id="btnBackHomeFromEditor">رجوع</button>
+    </div>
+
+    <div class="grid grid2" style="margin-top:14px">
+      <div class="card">
+        <div style="font-weight:900;margin-bottom:10px" id="settingsTitle">إعدادات العرض</div>
+
+        <label class="label" id="lblTemplate">القالب</label>
+        <select id="selTemplate"></select>
+
+        <hr class="sep"/>
+
+        <label class="label" id="lblTopic">العنوان</label>
+        <input class="input" id="inpTitle" placeholder="اكتبي عنوان العرض..." />
+
+        <label class="label" style="margin-top:10px" id="lblBody">النص</label>
+        <textarea class="input" id="inpBody" placeholder="اكتبي ملخص المحتوى..."></textarea>
+
+        <div class="grid grid2" style="margin-top:12px">
+          <div>
+            <label class="label" id="lblFont">الخط</label>
+            <select id="selFont"></select>
+          </div>
+          <div>
+            <label class="label" id="lblFontSize">حجم الخط</label>
+            <select id="selFontSize">
+              <option>14</option><option selected>16</option><option>18</option><option>20</option><option>24</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="grid grid2" style="margin-top:12px">
+          <div>
+            <label class="label" id="lblColor">اللون الأساسي</label>
+            <input class="input" id="inpColor" type="color" value="#13b6ec" />
+          </div>
+          <div>
+            <label class="label" id="lblSlides">عدد الشرائح</label>
+            <select id="selSlides">
+              <option>5</option><option selected>10</option><option>15</option><option>30</option>
+            </select>
+          </div>
+        </div>
+
+        <hr class="sep"/>
+
+        <label class="label" id="lblUserImage">صورة المستخدم</label>
+        <input class="input" id="inpUserImage" type="file" accept="image/*" />
+
+        <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:12px">
+          <button class="btn" id="btnPreview">معاينة</button>
+          <button class="btn2" id="btnGoCheckout">الدفع</button>
+        </div>
+
+        <div id="editorMsg" style="margin-top:12px"></div>
+      </div>
+
+      <div class="card">
+        <div style="font-weight:900;margin-bottom:10px" id="previewTitle">المعاينة</div>
+
+        <div class="previewStage" id="stage">
+          <div class="previewBg" id="stageBg"></div>
+
+          <div class="boxOverlay" id="boxTitle"><span>Title</span></div>
+          <div class="boxOverlay" id="boxBody"><span>Body</span></div>
+          <div class="boxOverlay" id="boxImage"><span>Image</span></div>
+
+          <div id="renderTitle" class="renderText renderTitle"></div>
+          <div id="renderBody" class="renderText renderBody"></div>
+          <img id="renderImage" class="renderImg" alt="">
+        </div>
+
+        <div class="mini" style="margin-top:10px" id="previewHint">
+          * الأدمن يحدد أماكن الصناديق. أنتِ تكتبين المحتوى فقط.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="page-checkout" class="section hidden">
+    <div class="rowBetween">
+      <div>
+        <div class="h1" style="font-size:28px" id="ckTitle">الدفع</div>
+        <div class="p" id="ckSub">PayPal — لازم Full Page عشان يكمل.</div>
+      </div>
+      <button class="btn2" id="btnBackToEditor">رجوع للمحرر</button>
+    </div>
+
+    <div class="grid grid2" style="margin-top:14px">
+      <div class="card">
+        <div style="font-weight:900;margin-bottom:10px" id="orderTitle">تفاصيل الطلب</div>
+        <div class="p" id="orderDetails"></div>
+        <div id="checkoutMsg" style="margin-top:12px"></div>
+        <div class="mini" style="margin-top:10px" id="ppNote">Sandbox: سجّلي دخول بحساب Buyer التجريبي.</div>
+      </div>
+
+      <div class="card">
+        <div style="font-weight:900;margin-bottom:10px" id="ppBoxTitle">PayPal</div>
+        <div id="paypalBtnContainer"></div>
+        <div class="mini" style="margin-top:10px" id="ppClientHint">
+          إذا الزر ما ظهر: تأكدي Client ID مضبوط + افتحي Full Page.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="page-admin" class="section hidden">
+    <div class="rowBetween">
+      <div>
+        <div class="h1" style="font-size:28px" id="adTitle">لوحة الأدمن</div>
+        <div class="p" id="adSub">ارفعي صورة قالب وحددي أماكن Title/Body/Image بالسحب.</div>
+      </div>
+      <button class="btn2" id="btnBackHomeFromAdmin">رجوع</button>
+    </div>
+
+    <div class="grid grid2" style="margin-top:14px">
+      <div class="card">
+        <div style="font-weight:900;margin-bottom:10px" id="tplAddTitle">إضافة قالب جديد</div>
+
+        <label class="label" id="lblTplName">اسم القالب</label>
+        <input class="input" id="inpTplName" placeholder="مثال: Modern Pitch" />
+
+        <div class="grid grid2" style="margin-top:12px">
+          <div>
+            <label class="label" id="lblTplPrice">السعر الأساسي (USD)</label>
+            <input class="input" id="inpTplPrice" type="number" value="5" />
+          </div>
+          <div>
+            <label class="label" id="lblTplMax">أقصى عدد شرائح</label>
+            <input class="input" id="inpTplMax" type="number" value="10" />
+          </div>
+        </div>
+
+        <hr class="sep"/>
+
+        <label class="label" id="lblTplBg">صورة القالب (خلفية)</label>
+        <input class="input" id="inpTplBg" type="file" accept="image/*" />
+
+        <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:12px">
+          <button class="btn2" id="btnBoxMode">تحديد الصناديق</button>
+          <button class="btn" id="btnSaveTpl">حفظ القالب</button>
+        </div>
+
+        <div id="adminTplMsg" style="margin-top:12px"></div>
+      </div>
+
+      <div class="card">
+        <div style="font-weight:900;margin-bottom:10px" id="adminPreviewTitle">معاينة الأدمن (تحريك الصناديق)</div>
+        <div class="previewStage" id="adminStage">
+          <div class="previewBg" id="adminStageBg"></div>
+          <div class="boxOverlay" id="adminBoxTitle"><span>Title</span></div>
+          <div class="boxOverlay" id="adminBoxBody"><span>Body</span></div>
+          <div class="boxOverlay" id="adminBoxImage"><span>Image</span></div>
+        </div>
+        <div class="mini" style="margin-top:10px">* على الآيباد: اسحبي المربعات مباشرة.</div>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top:14px">
+      <div style="font-weight:900;margin-bottom:10px" id="tplListTitle">قائمة القوالب</div>
+      <div id="adminList"></div>
+    </div>
+  </section>
+
+  <section id="page-pricing" class="section hidden">
+    <div class="rowBetween">
+      <div>
+        <div class="h1" style="font-size:28px" id="prTitle">الأسعار</div>
+        <div class="p" id="prSub">السعر = سعر القالب + زيادة بسيطة بعد 10 شرائح.</div>
+      </div>
+      <button class="btn2" id="btnBackHomeFromPricing">رجوع</button>
+    </div>
+
+    <div class="card" style="margin-top:14px">
+      <div class="p" id="pricingNote"></div>
+      <div class="mini" style="margin-top:10px">* Apple Pay + بطاقات: تحتاج سيرفر (نضيفها لاحقًا).</div>
+    </div>
+  </section>
+</div>
+    <script  src="./script.js"></script>
+
+  </body>
+  
+</html>
